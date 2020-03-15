@@ -18,17 +18,20 @@ const app: SudooExpress = SudooExpress.create(setting);
 // Health
 app.health('/health');
 
-// Static
-const target: string = Path.join(__dirname, 'dist');
-app.static(target);
-
 // Other
 const template: string = readTextFileSync(Path.join(__dirname, 'dist', 'index.html'));
 const ssrServer: ReactSSRServer = ReactSSRServer.create(template, `<div id="container"></div>`);
 
+// Index
+const target: string = Path.join(__dirname, 'dist');
+// Static
+app.static(target, {
+    excludes: ['/', '/index.html'],
+});
+
 app.express.get('*', async (_, res, next: NextFunction) => {
 
-    const html: string = ssrServer.render(React.createElement(Entry));
+    const html: string = ssrServer.render(React.createElement('div', { id: "container" }, React.createElement(Entry)));
     res.send(html);
 
     next();
