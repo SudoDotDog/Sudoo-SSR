@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { MainStyle } from "../style/main.style";
 
 export type MainComponentStates = {
 
@@ -19,6 +20,8 @@ export class MainComponent extends React.Component<RouteComponentProps, MainComp
         value: '',
     };
 
+    private readonly _mainStyle = MainStyle.use();
+
     public componentDidMount() {
 
         this.setState({
@@ -29,7 +32,7 @@ export class MainComponent extends React.Component<RouteComponentProps, MainComp
     public render() {
 
         return (<div>
-            <h1>Main</h1>
+            <h1 className={this._mainStyle.redColor}>Main</h1>
             <div>
                 <button onClick={() => this.props.history.push('/another')}>
                     Go to Another

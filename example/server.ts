@@ -11,6 +11,7 @@ import * as Path from "path";
 import * as React from "react";
 import { ReactSSRServer } from "../src/server/server";
 import { ServerEntry } from "./src/server";
+import { collection } from "./src/style/collection";
 
 const setting: SudooExpressApplication = SudooExpressApplication.create('React-SSR-Example', '1');
 const app: SudooExpress = SudooExpress.create(setting);
@@ -43,6 +44,8 @@ app.express.get('*', async (req, res, next: NextFunction) => {
             ),
         ),
     );
+
+    console.log(collection.renderStyleTagSting('server-side-style'));
     res.send(html);
 
     next();

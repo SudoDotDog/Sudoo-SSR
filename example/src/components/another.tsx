@@ -6,6 +6,7 @@
 
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { AnotherStyle } from "../style/another.style";
 
 export type AnotherComponentStates = {
 
@@ -19,6 +20,8 @@ export class AnotherComponent extends React.Component<RouteComponentProps, Anoth
         value: '',
     };
 
+    private readonly _anotherStyle = AnotherStyle.use();
+
     public componentDidMount() {
 
         this.setState({
@@ -29,7 +32,7 @@ export class AnotherComponent extends React.Component<RouteComponentProps, Anoth
     public render() {
 
         return (<div>
-            <h1>Another</h1>
+            <h1 className={this._anotherStyle.blueColor}>Another</h1>
             <div>
                 <button onClick={() => this.props.history.push('/')}>
                     Go to Main
