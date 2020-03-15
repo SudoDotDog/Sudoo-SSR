@@ -7,7 +7,7 @@
 import * as React from "react";
 import { AppContainer } from "react-hot-loader";
 import { ReactSSRClient } from "../src";
-import { Entry } from "./src/index";
+import { BrowserEntry } from "./src/browser";
 
 declare const module: any;
 
@@ -20,11 +20,11 @@ const render: (App: any) => void = (App: any): void => {
     </AppContainer>);
 };
 
-render(Entry);
+render(BrowserEntry);
 if (module.hot) {
 
-    module.hot.accept("./src/index", () => {
+    module.hot.accept("./src/browser", () => {
         // tslint:disable-next-line: no-require-imports
-        render(require("./src/index").Entry);
+        render(require("./src/browser").BrowserEntry);
     });
 }

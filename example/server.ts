@@ -10,7 +10,7 @@ import { NextFunction } from "express";
 import * as Path from "path";
 import * as React from "react";
 import { ReactSSRServer } from "../src/server/server";
-import { Entry } from "./src/index";
+import { ServerEntry } from "./src/server";
 
 const setting: SudooExpressApplication = SudooExpressApplication.create('React-SSR-Example', '1');
 const app: SudooExpress = SudooExpress.create(setting);
@@ -35,7 +35,7 @@ app.express.get('*', async (_, res, next: NextFunction) => {
         React.createElement(
             'div',
             { id: "container" },
-            React.createElement(Entry),
+            React.createElement(ServerEntry),
         ),
     );
     res.send(html);

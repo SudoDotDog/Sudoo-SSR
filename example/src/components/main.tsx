@@ -1,19 +1,19 @@
 /**
  * @author WMXPY
  * @namespace Example
- * @description Index
+ * @description Browser
  */
 
 import * as React from "react";
 
-export type EntryStates = {
+export type MainComponentStates = {
 
     readonly value: string;
 };
 
-export class Entry extends React.Component<{}, EntryStates> {
+export class MainComponent extends React.Component<{}, MainComponentStates> {
 
-    public readonly state: EntryStates = {
+    public readonly state: MainComponentStates = {
 
         value: '',
     };
@@ -28,7 +28,7 @@ export class Entry extends React.Component<{}, EntryStates> {
     public render() {
 
         return (<div>
-            <div>Hello World</div>
+            <h1>Main</h1>
             <div>
                 <div>There will be one more line below if mounted</div>
                 <div>{this.state.value}</div>
