@@ -25,6 +25,7 @@ app.static(target);
 // Other
 const template: string = readTextFileSync(Path.join(__dirname, 'dist', 'index.html'));
 const ssrServer: ReactSSRServer = ReactSSRServer.create(template, `<div id="container"></div>`);
+
 app.express.get('*', async (_, res, next: NextFunction) => {
 
     const html: string = ssrServer.render(React.createElement(Entry));

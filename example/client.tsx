@@ -11,7 +11,8 @@ import { Entry } from "./src/index";
 
 declare const module: any;
 
-const client: ReactSSRClient = ReactSSRClient.create(document.getElementById("container"));
+const container: Element = document.getElementById("container") as Element;
+const client: ReactSSRClient = ReactSSRClient.create(container);
 const render: (App: any) => void = (App: any): void => {
 
     client.mount(<AppContainer>
