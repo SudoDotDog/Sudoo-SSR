@@ -31,7 +31,13 @@ app.static(target, {
 
 app.express.get('*', async (_, res, next: NextFunction) => {
 
-    const html: string = ssrServer.render(React.createElement('div', { id: "container" }, React.createElement(Entry)));
+    const html: string = ssrServer.render(
+        React.createElement(
+            'div',
+            { id: "container" },
+            React.createElement(Entry),
+        ),
+    );
     res.send(html);
 
     next();
