@@ -1,20 +1,20 @@
 /**
  * @author WMXPY
  * @namespace Example
- * @description Main Component
+ * @description Another Component
  */
 
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 
-export type MainComponentStates = {
+export type AnotherComponentStates = {
 
     readonly value: string;
 };
 
-export class MainComponent extends React.Component<RouteComponentProps, MainComponentStates> {
+export class AnotherComponent extends React.Component<RouteComponentProps, AnotherComponentStates> {
 
-    public readonly state: MainComponentStates = {
+    public readonly state: AnotherComponentStates = {
 
         value: '',
     };
@@ -29,10 +29,10 @@ export class MainComponent extends React.Component<RouteComponentProps, MainComp
     public render() {
 
         return (<div>
-            <h1>Main</h1>
+            <h1>Another</h1>
             <div>
-                <button onClick={() => this.props.history.push('/another')}>
-                    Go to Another
+                <button onClick={() => this.props.history.push('/')}>
+                    Go to Main
                 </button>
             </div>
             <div>
