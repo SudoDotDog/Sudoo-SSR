@@ -26,7 +26,5 @@
         "target": "es6"
     },
     "exclude": [],
-    "include": [
-        "src/**/*"
-    ]
+    "include": []
 }

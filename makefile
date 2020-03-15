@@ -69,4 +69,4 @@ ex-build:
 
 ex-host:
 	@echo "[INFO] Starting Host Example"
-	@NODE_ENV=production $(ts-node) example/server.ts
+	@NODE_ENV=production $(ts-node) --project example/typescript/tsconfig.server.json example/server.ts

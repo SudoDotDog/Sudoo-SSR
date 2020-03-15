@@ -5,9 +5,12 @@
  */
 
 import { SudooExpress, SudooExpressApplication } from "@sudoo/express";
-import { readTextFile } from "@sudoo/io";
-import { HTTP_RESPONSE_CODE } from "@sudoo/magic";
+import { readTextFileSync } from "@sudoo/io";
+import { NextFunction } from "express";
 import * as Path from "path";
+import * as React from "react";
+import { ReactSSRServer } from "../src/server/server";
+import { Entry } from "./src/index";
 
 const setting: SudooExpressApplication = SudooExpressApplication.create('React-SSR-Example', '1');
 const app: SudooExpress = SudooExpress.create(setting);
@@ -20,13 +23,14 @@ const target: string = Path.join(__dirname, 'dist');
 app.static(target);
 
 // Other
-app.express.get('*', (_, res) => {
+const template: string = readTextFileSync(Path.join(__dirname, 'dist', 'index.html'));
+const ssrServer: ReactSSRServer = ReactSSRServer.create(template, `<div id="container"></div>`);
+app.express.get('*', async (_, res, next: NextFunction) => {
 
-    readTextFile(Path.join(__dirname, 'dist', 'index.html')).then((text: string) => {
-        res.send(text);
-    }).catch((err) => {
-        res.status(HTTP_RESPONSE_CODE.BAD_GATEWAY).send(err.message);
-    });
+    const html: string = ssrServer.render(React.createElement(Entry));
+    res.send(html);
+
+    next();
 });
 
 // tslint:disable-next-line: no-magic-numbers
