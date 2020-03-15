@@ -16,6 +16,11 @@
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-SSR#readme",
   "dependencies": {},
+  "optionalDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "@sudoo/react-force": "*"
+  },
   "devDependencies": {
     "@sudoo/express": "^2.3.0",
     "@sudoo/io": "^1.7.0",

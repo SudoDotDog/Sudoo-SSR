@@ -13,7 +13,7 @@ declare const module: any;
 
 const render: (App: any) => void = (App: any): void => {
 
-    ReactDOM.render(
+    ReactDOM.hydrate(
         (<AppContainer>
             <App />
         </AppContainer>),
