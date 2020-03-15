@@ -9,24 +9,24 @@ import * as ReactDOMServer from "react-dom/server";
 
 export class ReactSSRServer {
 
-    public static create(template: string, replace: string) {
+    public static create(template: string, nodeReplace: string) {
 
-        return new ReactSSRServer(template, replace);
+        return new ReactSSRServer(template, nodeReplace);
     }
 
     private readonly _template: string;
-    private readonly _replace: string;
+    private readonly _nodeReplace: string;
 
-    private constructor(template: string, replace: string) {
+    private constructor(template: string, nodeReplace: string) {
 
         this._template = template;
-        this._replace = replace;
+        this._nodeReplace = nodeReplace;
     }
 
     public render(node: React.ReactElement): string {
 
         const parsed: string = ReactDOMServer.renderToString(node);
-        const replaced: string = this._template.replace(this._replace, parsed);
+        const replaced: string = this._template.replace(this._nodeReplace, parsed);
 
         return replaced;
     }

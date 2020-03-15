@@ -45,12 +45,14 @@ app.express.get('*', async (req, res, next: NextFunction) => {
         ),
     );
 
-    console.log(collection.renderStyleTagSting('server-side-style'));
-    res.send(html);
+    const style: string = collection.renderStyleTagSting('server-side-style');
+    collection.resetAttachment();
+    const styleReplaced: string = html.replace(`<style id="server-side-style"></style>`, style);
+
+    res.send(styleReplaced);
 
     next();
 });
-
 // tslint:disable-next-line: no-magic-numbers
 app.host(9000);
 console.log('Hosting at port 9000');
