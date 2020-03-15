@@ -14,7 +14,7 @@ export class RoutesNavigator extends React.Component {
     public render() {
 
         return (<React.Fragment>
-            <Route path="/" component={MainComponent} />
+            <Route path="/" exact component={MainComponent} />
             <Route path="/another" component={AnotherComponent} />
         </React.Fragment>);
     }
