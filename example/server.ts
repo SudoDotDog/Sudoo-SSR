@@ -1,5 +1,5 @@
 /**
  * @author WMXPY
- * @namespace Basic
+ * @namespace Example
  * @description Server
  */
