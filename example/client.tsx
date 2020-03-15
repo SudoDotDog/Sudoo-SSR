@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { AppContainer } from "react-hot-loader";
-import { ReactSSRClient } from "../src/client/mount";
+import { ReactSSRClient } from "../src";
 import { Entry } from "./src/index";
 
 declare const module: any;

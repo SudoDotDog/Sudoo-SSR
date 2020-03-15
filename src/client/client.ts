@@ -1,7 +1,7 @@
 /**
  * @author WMXPY
  * @namespace Client
- * @description Index
+ * @description Client
  */
 
 import * as React from "react";
