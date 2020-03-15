@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
-// import * as MainStyle from "../../style/main.scss";
 
 export type MainComponentStates = {
 
