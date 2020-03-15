@@ -66,3 +66,7 @@ webpack_dev := example/webpack/webpack.dev.js
 ex-build:
 	@echo "[INFO] Starting Build Example"
 	@NODE_ENV=production $(webpack) --config $(webpack_build)
+
+ex-host:
+	@echo "[INFO] Starting Host Example"
+	@NODE_ENV=production $(ts-node) example/server.ts
