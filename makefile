@@ -4,8 +4,10 @@ dev := typescript/tsconfig.dev.json
 
 # NPX functions
 tsc := node_modules/.bin/tsc
-ts_node := node_modules/.bin/ts-node
+webpack := node_modules/.bin/webpack
+webpack_dev_server := node_modules/.bin/webpack-dev-server
 mocha := node_modules/.bin/mocha
+ts-node := node_modules/.bin/ts-node
 
 .IGNORE: clean-linux
 
@@ -54,3 +56,13 @@ clean-linux:
 publish: install tests license build
 	@echo "[INFO] Publishing package"
 	@cd app && npm publish --access=public
+
+# Example
+
+# Paths
+webpack_build := example/webpack/webpack.config.js
+webpack_dev := example/webpack/webpack.dev.js
+
+ex-build:
+	@echo "[INFO] Starting Build Example"
+	@NODE_ENV=production $(webpack) --config $(webpack_build)

@@ -19,12 +19,8 @@ module.exports = SudooWebpack.create({
 
     TSCONFIG_PATH,
 
-    APP_ENTRY_FILE_NAME: 'index.tsx',
+    APP_ENTRY_FILE_NAME: 'client.tsx',
 }, {
     title: 'SSR Example',
-    copies: [{
-        from: FAVICON,
-        to: BUILD_DIR,
-    }],
     template: TEMPLATE_FILE,
 }).production();
