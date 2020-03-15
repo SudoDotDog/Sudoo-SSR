@@ -5,19 +5,18 @@
  */
 
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
+import { ReactSSRClient } from "../src/client/mount";
 import { Entry } from "./src/index";
 
 declare const module: any;
 
+const client: ReactSSRClient = ReactSSRClient.create(document.getElementById("container"));
 const render: (App: any) => void = (App: any): void => {
 
-    ReactDOM.hydrate(
-        (<AppContainer>
-            <App />
-        </AppContainer>),
-        document.getElementById("container"));
+    client.mount(<AppContainer>
+        <App />
+    </AppContainer>);
 };
 
 render(Entry);
