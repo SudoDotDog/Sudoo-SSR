@@ -29,13 +29,18 @@ app.static(target, {
     excludes: ['/', '/index.html'],
 });
 
-app.express.get('*', async (_, res, next: NextFunction) => {
+app.express.get('*', async (req, res, next: NextFunction) => {
 
     const html: string = ssrServer.render(
         React.createElement(
             'div',
             { id: "container" },
-            React.createElement(ServerEntry),
+            React.createElement(
+                ServerEntry,
+                {
+                    location: req.path,
+                },
+            ),
         ),
     );
     res.send(html);
