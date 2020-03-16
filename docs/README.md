@@ -5,4 +5,4 @@
 [![npm version](https://badge.fury.io/js/%40sudoo%2Fssr.svg)](https://www.npmjs.com/package/@sudoo/ssr)
 [![downloads](https://img.shields.io/npm/dm/@sudoo/ssr.svg)](https://www.npmjs.com/package/@sudoo/ssr)
 
-:blowfish: Server side rendering 
+:blowfish: Server side rendering

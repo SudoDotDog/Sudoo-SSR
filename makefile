@@ -7,7 +7,7 @@ tsc := node_modules/.bin/tsc
 webpack := node_modules/.bin/webpack
 webpack_dev_server := node_modules/.bin/webpack-dev-server
 mocha := node_modules/.bin/mocha
-ts-node := node_modules/.bin/ts-node
+ts_node := node_modules/.bin/ts-node
 
 .IGNORE: clean-linux
 
@@ -69,4 +69,4 @@ ex-build:
 
 ex-host:
 	@echo "[INFO] Starting Host Example"
-	@NODE_ENV=production $(ts-node) --project example/typescript/tsconfig.server.json example/server.ts
+	@NODE_ENV=production $(ts_node) --project example/typescript/tsconfig.server.json example/server.ts
