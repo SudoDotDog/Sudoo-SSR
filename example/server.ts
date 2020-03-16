@@ -6,12 +6,15 @@
 
 import { SudooExpress, SudooExpressApplication } from "@sudoo/express";
 import { readTextFileSync } from "@sudoo/io";
+import { Register } from "@sudoo/jss";
 import { NextFunction } from "express";
 import * as Path from "path";
 import * as React from "react";
 import { ReactSSRServer } from "../src/server/server";
 import { ServerEntry } from "./src/server";
 import { collection } from "./src/style/collection";
+
+Register.setup();
 
 const setting: SudooExpressApplication = SudooExpressApplication.create('React-SSR-Example', '1');
 const app: SudooExpress = SudooExpress.create(setting);
