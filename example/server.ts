@@ -57,6 +57,7 @@ app.express.get('*', async (req, res, next: NextFunction) => {
 
     next();
 });
-// tslint:disable-next-line: no-magic-numbers
+
+// eslint-disable-next-line @typescript-eslint/no-magic-numbers
 app.host(9000);
 console.log('Hosting at port 9000');

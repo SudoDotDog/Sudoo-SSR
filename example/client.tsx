@@ -18,6 +18,7 @@ declare const module: any;
 
 const container: Element = document.getElementById("container") as Element;
 const client: ReactSSRClient = ReactSSRClient.create(container);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const render: (App: any) => void = (App: any): void => {
 
     client.mount(<AppContainer>
@@ -29,7 +30,7 @@ render(BrowserEntry);
 if (module.hot) {
 
     module.hot.accept("./src/browser", () => {
-        // tslint:disable-next-line: no-require-imports
+        // eslint-disable-next-line @typescript-eslint/no-require-imports
         render(require("./src/browser").BrowserEntry);
     });
 }

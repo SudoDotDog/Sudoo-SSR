@@ -9,7 +9,7 @@ import * as ReactDOM from "react-dom";
 
 export class ReactSSRClient {
 
-    public static create(container: Element) {
+    public static create(container: Element): ReactSSRClient {
 
         return new ReactSSRClient(container);
     }

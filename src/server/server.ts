@@ -9,7 +9,7 @@ import * as ReactDOMServer from "react-dom/server";
 
 export class ReactSSRServer {
 
-    public static create(template: string, nodeReplace: string) {
+    public static create(template: string, nodeReplace: string): ReactSSRServer {
 
         return new ReactSSRServer(template, nodeReplace);
     }
