@@ -14,3 +14,7 @@ yarn add @sudoo/ssr
 # Or
 npm install @sudoo/ssr --save
 ```
+
+## Example
+
+See `example` folder for a complete server & client side example.
