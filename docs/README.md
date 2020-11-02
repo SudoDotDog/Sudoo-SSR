@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/ssr.svg)](https://www.npmjs.com/package/@sudoo/ssr)
 
 :blowfish: Server side rendering
+
+## Install
+
+```sh
+yarn add @sudoo/ssr
+# Or
+npm install @sudoo/ssr --save
+```
