@@ -25,7 +25,7 @@
     "@sudoo/mock": "^1.5.0",
     "@sudoo/react-force": "^1.10.1",
     "@sudoo/react-force-dev": "^1.10.1",
-    "@sudoo/triforce": "^2.18.0",
+    "@sudoo/triforce": "^3.2.0",
     "@sudoo/webpack-react": "^4.6.1",
     "@types/express": "^4.17.13"
   },
